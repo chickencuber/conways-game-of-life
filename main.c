@@ -4,6 +4,7 @@
 
 #define WIDTH 20
 #define HEIGHT 20
+
 #define SCALE 50
 
 
@@ -98,10 +99,14 @@ Vector2 getPos() {
     return pos;
 }
 
+bool key(int key) {
+    return IsKeyPressed(key) || IsKeyPressedRepeat(key);
+}
+
 void draw() {
     ClearBackground(GetColor(0x000000ff));
     view();
-    if(IsKeyPressed(KEY_ENTER) || IsKeyPressedRepeat(KEY_ENTER)) {
+    if(key(KEY_ENTER) || key(KEY_SPACE)) {
         step();
     }
     Vector2 pos = getPos();
