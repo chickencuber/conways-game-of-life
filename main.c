@@ -1,7 +1,5 @@
 #include <math.h>
 #include <stdbool.h>
-#include <stdio.h>
-#include <string.h>
 #include "./libraries/raylib/raylib.h"
 
 #define WIDTH 20
@@ -15,12 +13,7 @@ void drawRect(int x, int y) {
 
 typedef bool Cells[WIDTH][HEIGHT];
 
-// double buffering goes brrrrr
-Cells current = {
-    {false, true, false},
-    {false, false, true},
-    {true, true, true},
-};
+Cells current;
 Cells next;
 
 //rules for if the current is dead
