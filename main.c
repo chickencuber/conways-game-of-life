@@ -1,12 +1,25 @@
 #include <math.h>
 #include <stdbool.h>
+#include <stdio.h>
 #include "./libraries/raylib/raylib.h"
 
-#define WIDTH 20
-#define HEIGHT 20
 
-#define SCALE 50
 
+
+#define WINSIZE 1000 
+
+#define WIDTH 50
+#define HEIGHT 50
+
+#define SCALE (WINSIZE / min(WIDTH, HEIGHT))
+
+int min(int a, int b) {
+    if(a < b) {
+        return a;
+    } else {
+        return b;
+    }
+}
 
 void drawRect(int x, int y) {
     DrawRectangle(x * SCALE, y * SCALE, SCALE, SCALE, WHITE);
